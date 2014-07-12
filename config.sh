@@ -1,3 +1,4 @@
+#!/bin/bash
 # Local port used to check / simulate activity over tunnel. DO NOT use server SSH port.
 CHECK_PORT=19922
 # Destination SSH port.

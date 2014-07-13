@@ -7,7 +7,7 @@ createTunnel() {
     # Add all ports needed for tunnel. The format of a tunnel should be:
     # -L[LocalPort]:[Host]:[HostPort]
     # Below creates a port on 3306 (MySQL default port)
-    /usr/bin/ssh -f -N -L3306:$END_POINT:3306 -L$CHECK_PORT:$END_POINT:$CHECK_ENDPOINT_PORT $END_POINT_USERNAME@$END_POINT -p $CHECK_ENDPOINT_PORT
+    /usr/bin/ssh -f -N -L$LOCAL_PORT:$END_POINT:$END_POINT_PORT -L$CHECK_PORT:$END_POINT:$CHECK_ENDPOINT_PORT $END_POINT_USERNAME@$END_POINT -p $CHECK_ENDPOINT_PORT
     if [[ $? -eq 0 ]]; then
         echo Tunnel to hostb created successfully
     else

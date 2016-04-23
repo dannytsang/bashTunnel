@@ -11,3 +11,5 @@ END_POINT=127.0.0.1
 END_POINT_USERNAME=tunnel
 # Destination port to be routed to.
 END_POINT_PORT=3306
+# Additonal options
+SSH_OPTIONS=-o "StrictHostKeyChecking no" -i ~/.ssh/id_rsa

@@ -51,7 +51,6 @@ This assumes OpenSSH has been installed and you've connected to the server.
 
 It's recommended that you create a separate non root account to establish the connection. In the example below it will create a user called "tunnel"
 ```
-#!bash
 sudo useradd -m tunnel
 ```
 The -m option will create an account with the defaults. This may differ from systems but requires a home directory and preferable a (BASH) shell on both ends of the tunnel.
@@ -63,7 +62,6 @@ The instructions assumes you've logged into the user that will create the tunnel
 
 1. Generate SSH keys if not done so already:
 ```
-#!bash
 ssh-keygen -t rsa -b 4096 -C "email@example.com"
 ```
 
@@ -73,7 +71,6 @@ Leave all the answers to the questions blank and press enter so that no password
 
 2. Obtain a copy of the bashTunnel code:
 ```
-#!bash
 git clone git@github.com:dannytsang/bashTunnel.git
 ```
 
@@ -92,14 +89,12 @@ The instructions assumes you've logged into the user that will create the tunnel
 ## Starting ##
 Go back to the client (as the tunnel user) and use the script startTunnel.sh to connect:
 ```
-#!bash
 startTunnel.sh &
 ```
 The ampersand at the end of the command means run it as a background process so your terminal is freed up to run other commands.
 
 To allow the script to run whilst the user is logged off use screen:
 ```
-#!bash
 screen -d -m startTunnel.sh
 ```
 The -d and -m allows it run and detach straight away so that other commands could be run.
